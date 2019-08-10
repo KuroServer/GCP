@@ -1,0 +1,19 @@
+FROM php:5.6-apache
+WORKDIR /path/to/DocumentRoot
+
+# gcsfuse-[バージョン名]を指定する
+RUN echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | tee /etc/apt/sources.list.d/gcsfuse.list
+RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+RUN groupadd fuse
+RUN usermod -aG fuse www-data
+
+RUN apt-get update -y && apt-get install -y \
+    gcsfuse \
+    sudo \
+    vim
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod a+x /usr/local/bin/entrypoint.sh
+
+EXPOSE 80 443
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
