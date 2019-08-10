@@ -16,12 +16,12 @@ mkdir -p /mnt/gcs/$GCS_BUCKET_NAME
 sudo gcsfuse -o allow_other $GCS_BUCKET_NAME /mnt/gcs/$GCS_BUCKET_NAME
 
 # create symlink
-if [ -L /var/www/html ]; then
-    rmdir /var/www/html
+if [ -L /var/www ]; then
+    rmdir /var/www
 else
-    rm -rf /var/www/html
+    rm -rf /var/www
 fi
-ln -sfn /mnt/gcs/$GCS_BUCKET_NAME /var/www/html
+ln -sfn /mnt/gcs/$GCS_BUCKET_NAME /var/www
 
 mkdir /var/run/apache2
 
