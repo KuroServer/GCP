@@ -13,11 +13,16 @@ RUN apt-get update -y && apt-get install -y \
     apache2 \
     sudo \
     lsb-release \
-    curl
+    curl \
+    gnupg
 
 # gcsfuse-[バージョン名]を指定する
-RUN export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s` && \
-    echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | tee /etc/apt/sources.list.d/gcsfuse.list
+
+#RUN export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s` && \
+#    echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | tee /etc/apt/sources.list.d/gcsfuse.list
+
+RUN echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | tee /etc/apt/sources.list.d/gcsfuse.list
+
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 RUN groupadd fuse
 RUN usermod -aG fuse www-data
