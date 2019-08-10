@@ -12,5 +12,7 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 RUN apt-get update && \
     apt-get install -y apache2
 
+COPY docker-entrypoint.sh /usr/local/bin
+
 EXPOSE 80
 CMD ["apachectl", "-D", "FOREGROUND"]
