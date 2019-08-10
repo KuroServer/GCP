@@ -23,7 +23,7 @@ fi
 ln -sfn /mnt/gcs/$GCS_BUCKET_NAME /var/www/html
 
 # main process
-httpd -g "daemon off;"
+#httpd -g "daemon off;"
 
 # unmount
-fusermount -u /mnt/gcs/$GCS_BUCKET_NAME
+#fusermount -u /mnt/gcs/$GCS_BUCKET_NAME
