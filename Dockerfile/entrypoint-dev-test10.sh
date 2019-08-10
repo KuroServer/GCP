@@ -23,6 +23,8 @@ else
 fi
 ln -sfn /mnt/gcs/$GCS_BUCKET_NAME /var/www/html
 
+mkdir /var/run/apache2
+
 #source /etc/apache2/envvars
 #chown -R www-data:www-data *
 #sudo -u www-data gcsfuse $GCS_BUCKET_NAME ./
