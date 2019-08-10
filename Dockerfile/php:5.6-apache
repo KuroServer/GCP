@@ -2,7 +2,8 @@ FROM ubuntu
 WORKDIR /path/to/DocumentRoot
 
 # gcsfuse-[バージョン名]を指定する
-RUN echo "deb http://packages.cloud.google.com/apt/dist gcsfuse-bionic main" | tee /etc/apt/sources.list.d/gcsfuse.list
+RUN export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
+RUN echo "deb http://packages.cloud.google.com/apt/dist $GCSFUSE_REPO main" | tee /etc/apt/sources.list.d/gcsfuse.list
 RUN curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 RUN groupadd fuse
 RUN usermod -aG fuse www-data
