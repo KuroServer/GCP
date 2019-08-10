@@ -1,4 +1,4 @@
-FROM php:5.6-apache
+FROM ubuntu
 #WORKDIR /path/to/DocumentRoot
 
 # gcsfuse-[バージョン名]を指定する
