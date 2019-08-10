@@ -11,7 +11,8 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 
 RUN apt-get update -y && apt-get install -y \
     apache2 \
-    sudo
+    sudo \
+    lsb-release
 
 # gcsfuse-[バージョン名]を指定する
 RUN export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`
