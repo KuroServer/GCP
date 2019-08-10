@@ -13,7 +13,7 @@ fi
 mkdir -p /mnt/gcs/$GCS_BUCKET_NAME
 
 # mount gcs
-sodo gcsfuse -o allow_other $GCS_BUCKET_NAME /mnt/gcs/$GCS_BUCKET_NAME
+sudo gcsfuse -o allow_other $GCS_BUCKET_NAME /mnt/gcs/$GCS_BUCKET_NAME
 
 # create symlink
 if [ -L /var/www/html ]; then
