@@ -1,5 +1,5 @@
 FROM ubuntu
-#WORKDIR /path/to/DocumentRoot
+WORKDIR /path/to/DocumentRoot
 
 # gcsfuse-[バージョン名]を指定する
 RUN echo "deb http://packages.cloud.google.com/apt gcsfuse-jessie main" | tee /etc/apt/sources.list.d/gcsfuse.list
