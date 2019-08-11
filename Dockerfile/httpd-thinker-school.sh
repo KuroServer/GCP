@@ -29,8 +29,8 @@ RUN apt-get update -y && apt-get install -y \
     gcsfuse \
     vim
 
-COPY entrypoint-dev-test10.sh /usr/local/bin/entrypoint-dev-test10.sh
-RUN chmod a+x /usr/local/bin/entrypoint-dev-test10.sh
+COPY entrypoint-thinker-school.sh /usr/local/bin/eentrypoint-thinker-school.sh.sh
+RUN chmod a+x /usr/local/bin/entrypoint-thinker-school.sh.sh
 
 EXPOSE 80 443
-ENTRYPOINT ["/usr/local/bin/entrypoint-dev-test10.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint-thinker-school.sh"]
