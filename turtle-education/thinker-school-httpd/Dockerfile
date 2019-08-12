@@ -12,7 +12,8 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && apt-get install -y \
-    apache2
+    apache2 \
+    libapache2-mod-php
 RUN a2enmod rewrite
 
 RUN apt-get update -y && apt-get install -y \
