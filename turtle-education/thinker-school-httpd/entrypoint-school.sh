@@ -27,4 +27,6 @@ ln -sfn /mnt/gcs/$GCS_BUCKET_NAME /var/www/html
 
 chown -R www-data:www-data /var/www/html/
 
+sudo a2enmod php7.2
+
 exec apache2 -D FOREGROUND
