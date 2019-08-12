@@ -36,7 +36,7 @@ RUN apt-get update -y && apt-get install -y \
     php-xmlreader \
     php-zlib \
     php-ssh2
-    php-ftp\
+#    php-ftp\
     php-sockets \
     php-opcache \
     sudo \
