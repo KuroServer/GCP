@@ -28,16 +28,19 @@ RUN apt-get update -y && apt-get install -y \
     php-imagick \
     php-xml \
     php-zip \
-    php-filter \
-    php-gd \
-    php-iconv \
-    php-mcrypt \
-    php-simplexml \
-    php-xmlreader \
-    php-zlib \
-    php-ssh2 \
-    php-ftp \
-    php-sockets \
+
+#    php-filter \
+#    php-gd \
+#    php-iconv \
+#    php-mcrypt \
+#    php-simplexml \
+#    php-xmlreader \
+#    php-zlib \
+
+#    php-ssh2 \
+#    php-ftp \
+#    php-sockets \
+
     php-opcache \
     sudo \
     lsb-release \
