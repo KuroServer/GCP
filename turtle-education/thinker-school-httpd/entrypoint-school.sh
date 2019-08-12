@@ -25,4 +25,6 @@ else
 fi
 ln -sfn /mnt/gcs/$GCS_BUCKET_NAME /var/www/html
 
+chmod 777 /var/www/html -R
+
 exec apache2 -D FOREGROUND
