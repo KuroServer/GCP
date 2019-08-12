@@ -31,13 +31,13 @@ RUN apt-get update -y && apt-get install -y \
     php-xml \
     php-zip \
 
-#    php-filter \
-#    php-gd \
-#    php-iconv \
-#    php-mcrypt \
-#    php-simplexml \
-#    php-xmlreader \
-#    php-zlib \
+    php-filter \
+    php-gd \
+    php-iconv \
+    php-mcrypt \
+    php-simplexml \
+    php-xmlreader \
+    php-zlib \
 
 #    php-ssh2 \
 #    php-ftp \
