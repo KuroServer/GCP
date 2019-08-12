@@ -37,7 +37,7 @@ RUN apt-get update -y && apt-get install -y \
     php-zlib \
     php-ssh2
 #    php-ftp\
-    php-sockets \
+#    php-sockets \
     php-opcache \
     sudo \
     lsb-release \
