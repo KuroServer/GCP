@@ -32,8 +32,8 @@ RUN apt-get update -y && apt-get install -y \
     gcsfuse \
     vim
 
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod a+x /usr/local/bin/entrypoint.sh
+COPY entrypoint-system.sh /usr/local/bin/entrypoint-system.sh
+RUN chmod a+x /usr/local/bin/entrypoint-system.sh
 
 EXPOSE 80 443
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint-system.sh"]
