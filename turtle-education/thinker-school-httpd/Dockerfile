@@ -12,7 +12,9 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && apt-get install -y \
-    apache2 \
+    apache2
+
+RUN apt-get update -y && apt-get install -y \
     php \
     php-curl \
     php-dom \
@@ -41,7 +43,9 @@ RUN apt-get update -y && apt-get install -y \
 #    php-ftp \
 #    php-sockets \
 
-    php-opcache \
+    php-opcache
+
+RUN apt-get update -y && apt-get install -y \
     sudo \
     lsb-release \
     curl \
