@@ -16,20 +16,20 @@ RUN apt-get update -y && apt-get install -y \
 
 RUN apt-get update -y && apt-get install -y \
     php \
-#    php-curl \
-#    php-dom \
-#    php-exif \
-#    php-fileinfo \
-    php-hash \
+    php-curl \
+    php-dom \
+    php-exif \
+    php-fileinfo \
+#    php-hash \
     php-json \
     php-mbstring \
     php-mysqli \
-#    php-libsodium \
-    php-openssl \
-#    php-pcre \
-#    php-imagick \
+    php-libsodium \
+#    php-openssl \
+    php-pcre \
+    php-imagick \
     php-xml \
-#    php-zip \
+    php-zip \
 
 #    php-filter \
 #    php-gd \
