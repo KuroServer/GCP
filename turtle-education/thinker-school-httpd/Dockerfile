@@ -69,5 +69,7 @@ RUN apt-get update -y && apt-get install -y \
 COPY entrypoint-school.sh /usr/local/bin/entrypoint-school.sh
 RUN chmod a+x /usr/local/bin/entrypoint-school.sh
 
+COPY php7.2.conf /etc/apache2/conf-available/php7.2.conf
+
 EXPOSE 80 443
 ENTRYPOINT ["/usr/local/bin/entrypoint-school.sh"]
