@@ -26,7 +26,7 @@ RUN apt-get update -y && apt-get install -y \
     php-mysqli \
     php-libsodium \
 #    php-openssl \
-    php-pcre \
+#    php-pcre \
     php-imagick \
     php-xml \
     php-zip \
