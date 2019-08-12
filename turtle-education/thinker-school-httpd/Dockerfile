@@ -14,8 +14,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y && apt-get install -y \
     apache2 \
     php \
-    php-mbstring \
+    php-mysql \
     php-mysqli \
+    php-gd \
+    php-mbstring \
+    php-opcache \
+    php-xml \
     sudo \
     lsb-release \
     curl \
