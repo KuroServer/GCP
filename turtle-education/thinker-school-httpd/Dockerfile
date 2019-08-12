@@ -31,17 +31,17 @@ RUN apt-get update -y && apt-get install -y \
     php-xml \
     php-zip \
 
-    php-filter \
+#    php-filter \
     php-gd \
     php-iconv \
-    php-mcrypt \
+#    php-mcrypt \
     php-simplexml \
     php-xmlreader \
-    php-zlib \
+#    php-zlib \
 
-#    php-ssh2 \
-#    php-ftp \
-#    php-sockets \
+    php-ssh2 \
+    php-ftp \
+    php-sockets \
 
     php-opcache
 
