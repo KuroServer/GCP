@@ -4,8 +4,8 @@ MAINTAINER KuroServerSystems
 
 RUN yum install -y vsftpd
 
-EXPOSE 20-21
-
+EXPOSE 21
+EXPOSE 60001-60100
 COPY vsftpd.conf /etc/vsftpd/
 
 COPY Entrypoint.sh  /usr/local/bin/
