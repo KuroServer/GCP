@@ -4,8 +4,7 @@ MAINTAINER KuroServerSystems
 
 RUN yum install -y vsftpd
 
-EXPOSE 21
-EXPOSE 60000-60100
+EXPOSE 20-21
 
 COPY vsftpd.conf /etc/vsftpd/
 
