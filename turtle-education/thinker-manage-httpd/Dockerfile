@@ -34,4 +34,4 @@ RUN chmod a+x /usr/local/bin/entrypoint-manage.sh
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 
 EXPOSE 80 443
-CMD ["/usr/sbin/init"]
+ENTRYPOINT ["/usr/local/bin/entrypoint-manage.sh"]
