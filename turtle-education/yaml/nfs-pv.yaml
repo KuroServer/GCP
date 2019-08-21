@@ -1,10 +1,9 @@
-kind: PersistentVolume
 apiVersion: v1
+kind: PersistentVolume
 metadata:
   name: nfs-pv
   labels:
     volume: nfs-volume
-    type: nfs
 spec:
   capacity:
     storage: 1000Gi
@@ -12,6 +11,7 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
+  storageClassName: slow
   nfs:
     # TODO: modify path and server appropriately
     path: /mnt/disks/thinker-disk
