@@ -4,6 +4,16 @@ MAINTAINER KuroServerSystems
 
 RUN yum -y update
 
+RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
+systemd-tmpfiles-setup.service ] || rm -f $i; done); \
+rm -f /lib/systemd/system/multi-user.target.wants/*;\
+rm -f /etc/systemd/system/*.wants/*;\
+rm -f /lib/systemd/system/local-fs.target.wants/*; \
+rm -f /lib/systemd/system/sockets.target.wants/*udev*; \
+rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
+rm -f /lib/systemd/system/basic.target.wants/*;\
+rm -f /lib/systemd/system/anaconda.target.wants/*;
+
 RUN yum -y install sudo
 
 RUN yum -y install nfs-utils
@@ -24,4 +34,4 @@ RUN chmod a+x /usr/local/bin/entrypoint-manage.sh
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 
 EXPOSE 80 443
-ENTRYPOINT ["/usr/local/bin/entrypoint-manage.sh"]
+CMD ["/usr/sbin/init"]
