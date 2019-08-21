@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mkdir /mnt/disks/thinker
+#mkdir /mnt/disks/thinker
 
-exec apache2 -D FOREGROUND
+#exec apache2 -D FOREGROUND
