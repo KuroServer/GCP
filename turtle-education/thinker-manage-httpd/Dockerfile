@@ -4,7 +4,9 @@ MAINTAINER KuroServerSystems
 
 RUN yum -y update
 
-#RUN yum -y sudo
+RUN yum -y install sudo
+
+RUN yum -y install nfs-utils
 
 RUN yum -y install httpd
 
