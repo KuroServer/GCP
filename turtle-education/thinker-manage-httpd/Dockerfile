@@ -4,7 +4,7 @@ MAINTAINER KuroServerSystems
 
 RUN yum -y update
 
-RUN yum -y sudo
+#RUN yum -y sudo
 
 RUN yum -y install httpd
 
