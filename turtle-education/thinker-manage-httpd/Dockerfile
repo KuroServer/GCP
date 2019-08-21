@@ -10,6 +10,8 @@ RUN yum -y install epel-release \
 php-opcache php-devel php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit \
 php-pecl-xdebug php-gd php-intl php-symfony php-pdo php-xml php-tokenizer php-pear php-zip
 
+RUN yum -y install composer 
+
 COPY entrypoint-manage.sh /usr/local/bin/entrypoint-manage.sh
 RUN chmod a+x /usr/local/bin/entrypoint-manage.sh
 
