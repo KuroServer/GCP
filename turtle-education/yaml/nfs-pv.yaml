@@ -2,7 +2,8 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: nfs-pv
-  labels:nfs-pv
+  labels:
+    volume: nfs-volume
     type: nfs
 spec:
   capacity:
