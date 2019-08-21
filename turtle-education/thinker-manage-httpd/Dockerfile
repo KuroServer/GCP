@@ -15,5 +15,7 @@ RUN yum -y install composer
 COPY entrypoint-manage.sh /usr/local/bin/entrypoint-manage.sh
 RUN chmod a+x /usr/local/bin/entrypoint-manage.sh
 
+COPY httpd.conf /etc/httpd/conf/httpd.conf
+
 EXPOSE 80 443
 ENTRYPOINT ["/usr/local/bin/entrypoint-manage.sh"]
