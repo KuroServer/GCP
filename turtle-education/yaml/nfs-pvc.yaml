@@ -9,6 +9,7 @@ spec:
   resources:
     requests:
       storage: 1000Gi
+  storageClassName: slow
   selector:
     matchLabels:
       volume: nfs-volume
