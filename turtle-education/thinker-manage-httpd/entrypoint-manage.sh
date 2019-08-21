@@ -1,5 +1,4 @@
 #!/bin/bash
 
-#mkdir /mnt/disks/thinker
-
-#exec apache2 -D FOREGROUND
+systemctl start httpd.service
+systemctl enable httpd.service
