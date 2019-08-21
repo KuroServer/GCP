@@ -1,4 +1,3 @@
 #!/bin/bash
 
-systemctl start httpd.service
-systemctl enable httpd.service
+exec /usr/sbin/httpd -D FOREGROUND
