@@ -1,36 +1,14 @@
-FROM ubuntu
+\FROM centos
 
 MAINTAINER KuroServerSystems
 
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_PID_FILE /var/run/apache2.pid
-ENV APACHE_RUN_DIR /var/run/apache2
-ENV APACHE_LOG_DIR /var/log/apache2
-ENV APACHE_LOCK_DIR /var/lock/apache2
+RUN yum -y update && yum -y install httpd
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update -y && apt-get install -y \
-    apache2 \
-    php \
-    sudo \
-    lsb-release \
-    curl \
-    gnupg
-
-# gcsfuse-[バージョン名]を指定する
-
-RUN export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s` && \
-    echo "deb http://packages.cloud.google.com/apt $GCSFUSE_REPO main" | tee /etc/apt/sources.list.d/gcsfuse.list
-
-RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-RUN groupadd fuse
-RUN usermod -aG fuse www-data
-    
-RUN apt-get update -y && apt-get install -y \
-    gcsfuse \
-    vim
+RUN yum -y install epel-release \
+ && rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm \
+ && yum -y install --enablerepo=remi,remi-php72 php \
+php-opcache php-devel php-mbstring php-mcrypt php-mysqlnd php-phpunit-PHPUnit \
+php-pecl-xdebug php-gd php-intl php-symfony php-pdo php-xml php-tokenizer php-pear php-zip
 
 COPY entrypoint-manage.sh /usr/local/bin/entrypoint-manage.sh
 RUN chmod a+x /usr/local/bin/entrypoint-manage.sh
