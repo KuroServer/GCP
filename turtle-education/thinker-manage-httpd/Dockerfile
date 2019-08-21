@@ -2,7 +2,11 @@ FROM centos
 
 MAINTAINER KuroServerSystems
 
-RUN yum -y update && yum -y install httpd
+RUN yum -y update
+
+RUN yum -y sudo
+
+RUN yum -y install httpd
 
 RUN yum -y install epel-release \
  && rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm \
