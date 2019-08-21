@@ -2,8 +2,8 @@
 
 mkdir -p /mnt/disks/thinker-disk
 
-systemctl start rpcbind 
-systemctl enable rpcbind 
+sudo systemctl start rpcbind 
+sudo systemctl enable rpcbind 
 
 #mount -t nfs 10.146.15.198:/mnt/disks/thinker-disk /mnt/disks/thinker-disk
 
